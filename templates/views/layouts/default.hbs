@@ -38,6 +38,32 @@
 				</ul>
 			</nav>
 		</div>
+		{{#if messages}}
+		<div id="flash-messages" class="container">
+			{{#if messages.info}}
+			<div class="alert alert-info">
+					{{{flashMessages messages.info}}}
+			</div>
+			{{/if}}
+			{{#if messages.success}}
+			<div class="alert alert-success">
+					{{{flashMessages messages.success}}}
+			</div>
+			{{/if}}
+			{{#if messages.warning}}
+			<div class="alert alert-warning">
+					{{{flashMessages messages.warning}}}
+			</div>
+			{{/if}}
+			{{#if messages.error}}
+			<div class="alert alert-danger">
+					{{{flashMessages messages.error}}}
+			</div>
+			{{/if}}
+		</div>
+		{{/if}}
+		<!-- The content block should contain the body of your template's content-->
+		{{{body}}}
 		<script src="/js/jquery/jquery-1.11.3.min.js"></script>
 		<script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script>
 		{{{isAdminEditorJS user}}}
