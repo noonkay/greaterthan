@@ -1,0 +1,18 @@
+<div class="container">
+	<h1>Greater Than Podcast</h1>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-8 col-md-9">
+			<div class="blog">
+				{{# each data.stories.results}}
+				<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="post">
+					<h2><a href="{{storyUrl slug}}">{{{title}}}</a></h2>
+					{{#if image}}<img src="{{{cloudinaryUrl image width=160 height=160 crop='fit' }}}" class="img pull-right">{{/if}}
+				</div>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+	{{>pagination}}
+</div>

@@ -13,13 +13,6 @@ module.exports = function () {
 
 	var _helpers = {};
 
-	/**
-	 * Generic HBS Helpers
-	 * ===================
-	 */
-
-	// standard hbs equality check, pass in two values from template
-	// {{#ifeq keyToCheck data.myKey}} [requires an else blockin template regardless]
 	_helpers.ifeq = function (a, b, options) {
 		if (a == b) { // eslint-disable-line eqeqeq
 			return options.fn(this);
@@ -27,27 +20,6 @@ module.exports = function () {
 			return options.inverse(this);
 		}
 	};
-
-	/**
-	 * Port of Ghost helpers to support cross-theming
-	 * ==============================================
-	 *
-	 * Also used in the default keystonejs-hbs theme
-	 */
-
-	// ### Date Helper
-	// A port of the Ghost Date formatter similar to the keystonejs - jade interface
-	//
-	//
-	// *Usage example:*
-	// `{{date format='MM YYYY}}`
-	// `{{date publishedDate format='MM YYYY'`
-	//
-	// Returns a string formatted date
-	// By default if no date passed into helper than then a current-timestamp is used
-	//
-	// Options is the formatting and context check this.publishedDate
-	// If it exists then it is formated, otherwise current timestamp returned
 
 	_helpers.date = function (context, options) {
 		if (!options && context.hasOwnProperty('hash')) {
@@ -76,44 +48,6 @@ module.exports = function () {
 		return date;
 	};
 
-	// ### Category Helper
-	// Ghost uses Tags and Keystone uses Categories
-	// Supports same interface, just different name/semantics
-	//
-	// *Usage example:*
-	// `{{categoryList categories separator=' - ' prefix='Filed under '}}`
-	//
-	// Returns an html-string of the categories on the post.
-	// By default, categories are separated by commas.
-	// input. categories:['tech', 'js']
-	// output. 'Filed Undder <a href="blog/tech">tech</a>, <a href="blog/js">js</a>'
-
-	_helpers.categoryList = function (categories, options) {
-		var autolink = _.isString(options.hash.autolink) && options.hash.autolink === 'false' ? false : true;
-		var separator = _.isString(options.hash.separator) ? options.hash.separator : ', ';
-		var prefix = _.isString(options.hash.prefix) ? options.hash.prefix : '';
-		var suffix = _.isString(options.hash.suffix) ? options.hash.suffix : '';
-		var output = '';
-
-		function createTagList (tags) {
-			var tagNames = _.pluck(tags, 'name');
-
-			if (autolink) {
-				return _.map(tags, function (tag) {
-					return linkTemplate({
-						url: ('/blog/' + tag.key),
-						text: _.escape(tag.name),
-					});
-				}).join(separator);
-			}
-			return _.escape(tagNames.join(separator));
-		}
-
-		if (categories && categories.length) {
-			output = prefix + createTagList(categories) + suffix;
-		}
-		return new hbs.SafeString(output);
-	};
 
 	/**
 	 * KeystoneJS specific helpers
@@ -192,19 +126,14 @@ module.exports = function () {
 	// the routes by keynames to reduce the maintenance of changing urls
 
 	// Direct url link to a specific post
-	_helpers.postUrl = function (postSlug, options) {
-		return ('/blog/post/' + postSlug);
+	_helpers.storyUrl = function (storySlug, options) {
+		return ('/podcast/' + storySlug);
 	};
 
 	// might be a ghost helper
 	// used for pagination urls on blog
 	_helpers.pageUrl = function (pageNumber, options) {
-		return '/blog?page=' + pageNumber;
-	};
-
-	// create the category url for a blog-category page
-	_helpers.categoryUrl = function (categorySlug, options) {
-		return ('/blog/' + categorySlug);
+		return '/podcast?page=' + pageNumber;
 	};
 
 	// ### Pagination Helpers

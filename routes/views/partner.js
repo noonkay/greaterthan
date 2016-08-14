@@ -7,9 +7,6 @@ exports = module.exports = function (req, res) {
 
 	// Set locals
 	locals.section = 'partner';
-	// locals.filters = {
-	// 	post: req.params.post,
-	// };
 	locals.data = {
 		partners: [],
 	};
