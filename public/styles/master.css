@@ -127,9 +127,9 @@ input{
 #nav-icon1 span{
   display: block;
   position: absolute;
-  height: 6px;
+  height: 5px;
   width: 100%;
-  background: #7eaf7f;
+  background: #5a5a5a;
   /*background: #d3531a;*/
   border-radius: 9px;
   opacity: 1;
