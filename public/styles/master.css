@@ -179,3 +179,13 @@ input{
 audio{
   width: 100%;
 }
+.profile-img{
+  border-radius: 100%;
+  padding-right: 10%;
+  padding-left: 10%;
+}
+.gutter-wide{
+  padding-top: 5%;
+  padding-right: 10%;
+  padding-left: 10%;
+}
