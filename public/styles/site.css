@@ -1058,7 +1058,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857;
-  color: #5a5a5a;
+  color: #333333;
   background-color: #fff; }
 
 input,
@@ -1088,7 +1088,7 @@ img {
 
 .img-responsive {
   display: block;
-  width: 100%;
+  max-width: 100%;
   height: auto; }
 
 .img-rounded {
