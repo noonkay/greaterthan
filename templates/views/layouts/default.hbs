@@ -6,8 +6,9 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>Greater Than Podcast</title>
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-		<link href="/styles/site.css" rel="stylesheet">
-		<link rel="stylesheet" href="/styles/master.css" media="screen" title="no title" charset="utf-8">
+		<link rel="stylesheet" href="/styles/site.css">
+		<link rel="stylesheet" href="/styles/master.css">
+		<link rel="stylesheet" href="/styles/font-awesome-4.6.3/css/font-awesome.min.css">
 
 		{{!-- This file provides the default styling for the KeystoneJS Content Editor
 			- only renders when user is logged in and admin--}}
@@ -71,6 +72,26 @@
 		{{/if}}
 		<!-- The content block should contain the body of your template's content-->
 		{{{body}}}
+		<footer class="footer">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-8">
+							<ul class="nav-plain-link">
+								{{# each navLinks}}
+								<li {{#ifeq ../section key}}class="active"{{else}}{{/ifeq}}>
+									<a href="{{ href }}">{{ label }}</a>
+								</li>
+								{{/each}}
+							</ul>
+					</div>
+					<div class="col-sm-2 col-sm-offset-2">
+						<a href="https://www.facebook.com/greaterthanpodcast"><i class="fa fa-facebook-square fa-4x" aria-hidden="true"></i></a>
+						<a href="https://twitter.com/@greaterthanlive"><i class="fa fa-twitter-square fa-4x" aria-hidden="true"></i></a>
+						<a href="http://greaterthanpodcast.libsyn.com/rss"><i class="fa fa-rss-square fa-4x" aria-hidden="true"></i></a>
+					</div>
+				</div>
+			</div>
+		</footer>
 		<script src="/js/jquery/jquery-1.11.3.min.js"></script>
 		<script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script>
 		<script src="/js/script.js"></script>

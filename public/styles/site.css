@@ -5826,7 +5826,17 @@ button.close {
 
 body {
   color: #5a5a5a;
-  background-color: #f9f8f3; }
+  background-color: #f9f8f3;
+  margin-bottom: 100px; }
+
+a {
+  color: #5a5a5a; }
+
+a:hover {
+  color: #395f6a; }
+
+html {
+  position: relative; }
 
 #header {
   margin-top: 30px; }

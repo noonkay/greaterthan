@@ -14,10 +14,6 @@
   box-shadow:inset 0 0 0 1px white;
 }
 
-input{
-  display:none;
-}
-
 .navigator label{
   text-transform:uppercase;
   font-size: 10px;
@@ -79,7 +75,7 @@ input{
 
 .overlay ul li a:hover,
 .overlay ul li a:focus {
-	color: #849368;
+	color: #395f6a;
 }
 
 .showoverlay{
@@ -111,7 +107,7 @@ input{
   width: 40px;
   height: 25px;
   z-index: 9999;
-  position: relative;
+  position: fixed;
   margin: 50px;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -176,16 +172,43 @@ input{
   -o-transform: rotate(-135deg);
   transform: rotate(-135deg);
 }
+
 audio{
   width: 100%;
 }
+
 .profile-img{
   border-radius: 100%;
   padding-right: 10%;
   padding-left: 10%;
 }
+
 .gutter-wide{
   padding-top: 5%;
   padding-right: 10%;
   padding-left: 10%;
+}
+
+.footer{
+  background-color: #5a5a5a;
+  color: #f9f8f3;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+}
+
+.nav-plain-link{
+  padding-top: 1em;
+}
+.nav-plain-link li{
+  display: inline-block;
+  margin-right: 5%;
+  font-size: 1.25em;
+}
+
+.footer a{
+  color: inherit;
 }
