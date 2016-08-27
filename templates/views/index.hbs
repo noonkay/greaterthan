@@ -1,5 +1,16 @@
 {{!< default}}
 <div class="container">
-	<div class="jumbotron">	
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-2">
+			<header>
+				<h1>{{data.story.title}}</h1>
+			</header>
+			<div class="post">
+				{{#if data.story.image}}<img src="{{{cloudinaryUrl data.story.image width=750 height=450 crop='fit' }}}" class="img-responsive">{{/if}}
+				<audio controls="controls">
+					<source src="{{{data.story.podcastURL}}}">
+				</audio>
+			</div>
+		</div>
 	</div>
 </div>

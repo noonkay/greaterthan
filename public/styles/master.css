@@ -1,27 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Muli:400,300);
 
-.navigator{
-  width:40px;
-  background:white;
-  opacity:0.8;
-  color:black;
-  box-shadow:inset 0 0 0 1px black;
-}
-
-.navigator:hover{
-  background:black;
-  color:white;
-  box-shadow:inset 0 0 0 1px white;
-}
-
-.navigator label{
-  text-transform:uppercase;
-  font-size: 10px;
-  text-align:center;
-}
-
-.navigator label:hover{
-  cursor:pointer;
+*{
+  font-family: 'Muli', sans-serif;
 }
 
 .overlay{
@@ -30,13 +10,14 @@
 	height: 100%;
 	top: 0;
 	left: 0;
-	background: rgba(0,0,0,0.7);
+	background: rgba(0,0,0,0.85);
   z-index: 9998;
   opacity: 0;
 	visibility: hidden;
 	-webkit-transition: opacity 0.5s, visibility 0s 0.5s;
 	transition: opacity 0.5s, visibility 0s 0.5s;
 }
+
 .overlay nav {
 	text-align: center;
 	position: relative;
@@ -65,11 +46,10 @@
 .overlay ul li a {
 	font-weight: 300;
 	display: block;
-	color: white;
+	color: #f9f8f3;
   text-decoration:none;
 	-webkit-transition: color 0.2s;
 	transition: color 0.2s;
-  font-family: 'Muli', sans-serif;;
   text-transform:uppercase;
 }
 
@@ -105,10 +85,11 @@
 
 #nav-icon1 {
   width: 40px;
-  height: 25px;
+  height: 40px;
   z-index: 9999;
   position: fixed;
-  margin: 50px;
+  top: 25px;
+  right: 25px;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -123,10 +104,9 @@
 #nav-icon1 span{
   display: block;
   position: absolute;
-  height: 5px;
+  height: 4px;
   width: 100%;
-  background: #5a5a5a;
-  /*background: #d3531a;*/
+  background: #91a6b4;
   border-radius: 9px;
   opacity: 1;
   left: 0;
@@ -145,15 +125,15 @@
 }
 
 #nav-icon1 span:nth-child(2) {
-  top: 8px;
-}
-
-#nav-icon1 span:nth-child(3) {
   top: 16px;
 }
 
+#nav-icon1 span:nth-child(3) {
+  top: 32px;
+}
+
 #nav-icon1.open span:nth-child(1) {
-  top: 8px;
+  top: 16px;
   -webkit-transform: rotate(135deg);
   -moz-transform: rotate(135deg);
   -o-transform: rotate(135deg);
@@ -166,7 +146,7 @@
 }
 
 #nav-icon1.open span:nth-child(3) {
-  top: 8px;
+  top: 16px;
   -webkit-transform: rotate(-135deg);
   -moz-transform: rotate(-135deg);
   -o-transform: rotate(-135deg);
@@ -197,12 +177,13 @@ audio{
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 80px;
+  height: 60px;
 }
 
 .nav-plain-link{
-  padding-top: 1em;
+  padding-top: 0.5em;
 }
+
 .nav-plain-link li{
   display: inline-block;
   margin-right: 5%;
@@ -211,4 +192,12 @@ audio{
 
 .footer a{
   color: inherit;
+}
+
+.logo{
+  height: 50px;
+  width: auto;
+  position: fixed;
+  top: 25px;
+  left: 25px;
 }
